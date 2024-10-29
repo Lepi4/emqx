@@ -40,7 +40,7 @@ http {
     resolver 127.0.0.11 ipv6=off;
 
     server {
-        listen 3000 default_server;
+        listen 80 default_server;
 
         root /dev/null;
         server_name _;
@@ -71,6 +71,87 @@ http {
             proxy_set_header X-Real-IP $remote_addr;
 
         }
+		
+		location / {
+            allow   172.30.32.2;
+            deny    all;
+
+            set     $target "{{ .server2 }}";
+            set     $token "{{ .auth_token }}";
+
+            set $args                   $args&token=$token;
+            proxy_pass                  $target;
+            proxy_http_version          1.1;
+            proxy_ignore_client_abort   off;
+            proxy_read_timeout          86400s;
+            proxy_redirect              off;
+            proxy_send_timeout          86400s;
+            proxy_max_temp_file_size    0;
+
+            proxy_set_header Accept-Encoding "";
+            proxy_set_header Connection $connection_upgrade;
+            proxy_set_header Host $http_host;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header X-NginX-Proxy true;
+            proxy_set_header X-Real-IP $remote_addr;
+			
+		}
+		
+		location / {
+            allow   172.30.32.2;
+            deny    all;
+
+            set     $target "{{ .server3 }}";
+            set     $token "{{ .auth_token }}";
+
+            set $args                   $args&token=$token;
+            proxy_pass                  $target;
+            proxy_http_version          1.1;
+            proxy_ignore_client_abort   off;
+            proxy_read_timeout          86400s;
+            proxy_redirect              off;
+            proxy_send_timeout          86400s;
+            proxy_max_temp_file_size    0;
+
+            proxy_set_header Accept-Encoding "";
+            proxy_set_header Connection $connection_upgrade;
+            proxy_set_header Host $http_host;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header X-NginX-Proxy true;
+            proxy_set_header X-Real-IP $remote_addr;
+			
+		}
+		
+		location / {
+            allow   172.30.32.2;
+            deny    all;
+
+            set     $target "{{ .server4 }}";
+            set     $token "{{ .auth_token }}";
+
+            set $args                   $args&token=$token;
+            proxy_pass                  $target;
+            proxy_http_version          1.1;
+            proxy_ignore_client_abort   off;
+            proxy_read_timeout          86400s;
+            proxy_redirect              off;
+            proxy_send_timeout          86400s;
+            proxy_max_temp_file_size    0;
+
+            proxy_set_header Accept-Encoding "";
+            proxy_set_header Connection $connection_upgrade;
+            proxy_set_header Host $http_host;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header X-NginX-Proxy true;
+            proxy_set_header X-Real-IP $remote_addr;
+			
+		}
     }
 }
 

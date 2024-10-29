@@ -16,22 +16,34 @@
     "true": true,
     "ingress": true,
     "timeout": 30,
-    "panel_icon": "mdi:home-group",
+    "panel_icon": "set-none",
     "map": [
       "config:ro"
     ],
     "ports": {
-      "3000/tcp": null
+      "3000/tcp": null,
+	  "4000/tcp": null,
+	  "18083/tcp": null,
+	  "8090/tcp": null
     },
     "ports_description": {
-      "3000/tcp": "Frontend tcp-listen port"
+      "3000/tcp": "Frontend tcp-listen port",
+	  "4000/tcp": "Frontend tcp-listen port",
+	  "18083/tcp": "Frontend tcp-listen port",
+	  "8090/tcp": "Frontend tcp-listen port"
     },
     "options": {
       "server": null,
+      "server2": null,
+	  "server3": null,
+	  "server4": null,
       "auth_token": ""
     },
     "schema": {
       "server": "url",
+	  "server2": "url",
+	  "server3": "url",
+	  "server4": "url",
       "auth_token": "str?"
     },
     "image": "zigbee2mqtt/zigbee2mqtt-proxy-{arch}"
