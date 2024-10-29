@@ -16,7 +16,7 @@
     "true": true,
     "ingress": true,
     "timeout": 30,
-    "panel_icon": "set-none",
+    "panel_icon": "mdi:home-group",
     "map": [
       "config:ro"
     ],
