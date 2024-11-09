@@ -1,5 +1,5 @@
 {
-    "name": "EMQX-proxy",
+    "name": "TorServer-proxy",
     "version": "0.2.0",
     "slug": "EMQX__proxy",
     "description": "Proxy for externally running Zigbee2MQTT",
