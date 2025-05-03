@@ -40,7 +40,7 @@ http {
     resolver 127.0.0.11 ipv6=off;
 
     server {
-        listen 8006 default_server;
+        listen 80 default_server;
 
         root /dev/null;
         server_name _;
