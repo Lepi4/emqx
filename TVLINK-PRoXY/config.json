@@ -21,18 +21,18 @@
       "config:ro"
     ],
     "ports": {
-      "80/tcp": null
+      "8006/tcp": null
     },
     "ports_description": {
-      "80/tcp": "Frontend tcp-listen port"
+      "8006/tcp": "Frontend tcp-listen port"
     },
     "options": {
       "server": null,
-      "auth_token": ""
+      
     },
     "schema": {
       "server": "url",
-      "auth_token": "str?"
+      
     },
     "image": "zigbee2mqtt/zigbee2mqtt-proxy-{arch}"
 }
