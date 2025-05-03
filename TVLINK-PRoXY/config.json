@@ -1,5 +1,5 @@
 {
-    "name": "TVLINK-PROXY",
+    "name": "WB-PROXY",
     "version": "0.2.0",
     "slug": "WB__proxy",
     "description": "Proxy for externally running Wirenboard",
